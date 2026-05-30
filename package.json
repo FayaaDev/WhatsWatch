@@ -1,0 +1,17 @@
+{
+  "name": "WhatsWatch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Persistent WhatsApp Web watcher for Linux servers",
+  "main": "watcher.js",
+  "scripts": {
+    "start": "node watcher.js",
+    "check": "node --check watcher.js",
+    "logs": "journalctl --user -u WhatsWatch.service -f",
+    "reload": "systemctl --user daemon-reload && systemctl --user restart WhatsWatch.service && systemctl --user status WhatsWatch.service"
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.34.1"
+  }
+}
